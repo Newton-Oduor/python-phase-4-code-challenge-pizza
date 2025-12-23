@@ -80,7 +80,7 @@ def create_restaurant_pizza():
         return jsonify(rp.to_dict()), 201
     
     except ValueError as e:
-        return jsonify({"error": str(e)}), 400
+        return jsonify({"errors": ["validation errors"]}), 400
     except KeyError:
         return jsonify({"error": "Missing required fields"}), 400
 
